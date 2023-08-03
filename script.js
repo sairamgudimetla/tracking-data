@@ -122,11 +122,12 @@ const data = {
 	systemInfo: getSystemInfo()
 };
 console.log(data);
-fetch("https://tracking-data.vercel.app/trackdata/", {
+fetch("/trackdata/", {
   method: "POST",
   body: JSON.stringify(data),
   headers: {
-    "Content-type": "application/json; charset=UTF-8"
+    "Content-type": "application/json; charset=UTF-8",
+    "Access-Control-Allow-Origin": "*"
   }
 });
 
